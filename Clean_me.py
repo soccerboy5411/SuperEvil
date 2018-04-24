@@ -5,7 +5,7 @@ import re
 
 parser = argparse.ArgumentParser(description='Cleans a string|regex from a specified log')
 # argument for file path
-parser.add_argument('-f', '--file', type=file, required=True,
+parser.add_argument('-f', '--file', required=True,
                     help='Requires absolute path')
 # creating a mutually exclusive group for requiring either a string or regex
 group = parser.add_mutually_exclusive_group(required=True)
@@ -19,9 +19,9 @@ args = parser.parse_args()
 
 # converts all searches to regex
 if args.string:
-    regex = re.escape(args.string)  # escapes special chars & compiles regex
+    regex = re.escape(args.string)  # escapes special chars
 else:
-    regex = args.regex  # compiles regex
+    regex = args.regex  # reassigns to unified variable
 
 rm_count = 0  # creates the rm_count variable
 clean_file = []  # creates a clean_log table
