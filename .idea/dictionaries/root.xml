@@ -4,9 +4,11 @@
       <w>addr</w>
       <w>cidr</w>
       <w>dest</w>
+      <w>hexdump</w>
       <w>icmp</w>
       <w>ieee</w>
       <w>oui</w>
+      <w>unans</w>
     </words>
   </dictionary>
 </component>
