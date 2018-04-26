@@ -3,6 +3,7 @@ import socket
 import getopt
 import subprocess
 
+
 # Define some global variables
 listen = False
 command = False

@@ -81,7 +81,7 @@ hashes = (
 
 counter = 0
 
-string_to_check = raw_input('Please enter the has you wish to check: ')
+string_to_check = raw_input('Please enter the hash you wish to check: ')
 
 for h in hashes:
     text = hash_check(h[0], h[1], string_to_check)
@@ -89,4 +89,4 @@ for h in hashes:
         counter += 1
         print text
 if counter == 0:
-    print "Your input hash did not match anything, sorry!"
+    print "Your input hash did not match anything."
