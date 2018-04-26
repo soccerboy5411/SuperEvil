@@ -12,15 +12,15 @@ server.listen(5)
 
 print "[*] Received: %s" % request
 
-#send back a packet
+# send back a packet
 client_socket.send("ACK!")
 
 client_socket.close()
 
-whilte True:
-  client,addr = server.accept()
-  print "[*] Accepted connection from: %s:%d" % (addr[0],addr[1])
+while True:
+    client, addr = server.accept()
+    print "[*] Accepted connection from: %s:%d" % (addr[0],addr[1])
   
-  #spin up out client thread to handle incoming data
-  client_handler = threading.Thread(target=handle_client,args=(client,))
-  client_handler.start()
+    # spin up our client thread to handle incoming data
+    client_handler = threading.Thread(target=handle_client, args=(client,))
+    client_handler.start()

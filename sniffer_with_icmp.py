@@ -6,6 +6,7 @@ from ctypes import *
 # host to listen on
 host = "192.168.0.187"
 
+
 # our IP header
 class IP(Structure):
     _fields_ = [
@@ -91,7 +92,7 @@ try:
             buff = raw_buffer[offset:offset + sizeof(ICMP)]
 
             # create our ICMP structure
-            icmp_header = ICMP(buf)
+            icmp_header = ICMP(buff)
 
             print "ICMP -> Type: %d Code: %d" % (icmp_header.type, icmp_header.code)
 
@@ -101,4 +102,3 @@ except KeyboardInterrupt:
     # if we're using Windows, turn off promiscuous mode
     if os.name == "nt":
         sniffer.ioctl(socket.SIO_RCVALL, socket.RCVALL_OFF)
-        
